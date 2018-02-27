@@ -1,5 +1,7 @@
 const host = "loacalhost"
+
 module.exports = {
+	serverPort: 8080,
 	db: {
 		database: 'carent',
 		username: 'root',
