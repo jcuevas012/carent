@@ -1,3 +1,4 @@
+const host = "loacalhost"
 module.exports = {
 	db: {
 		database: 'carent',
@@ -11,5 +12,8 @@ module.exports = {
 			min: 0,
 			idle: 10000
 		}
+	},
+	enpoints: {
+		car: `${host}:5005`
 	}
 }
