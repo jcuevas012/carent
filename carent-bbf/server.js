@@ -1,9 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const { serverPort } = require('../config')
 const chalk = require('chalk')
 const { Cars } = require('./routes')
-
+const { serverPort } = require('../config')
 // setup app
 const app = express()
 app.use(bodyParser.json())

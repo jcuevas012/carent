@@ -1,6 +1,6 @@
-const request = require('request-promise-nativee')
+const request = require('request-promise-native')
 const { enpoints } = require('../../config')
-const Promise = require('blueprint')
+const Promise = require('bluebird')
 
 class Client {
     

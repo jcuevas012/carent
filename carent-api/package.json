@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "car": "micro -p 5000 car.js"
+    "car": "micro -p 5000 car.js",
+    "dev": "concurrently \"micro-dev -p 5000 car.js\" "
+
   },
   "author": "Jorge Cuevas",
   "license": "ISC",
   "dependencies": {
+    "carent-db": "file:../carent-db",
+    "concurrently": "^3.5.1",
     "micro": "^9.0.2",
+    "micro-dev": "^2.2.0",
     "micro-router": "^0.1.1",
     "microrouter": "^3.0.0"
   }
