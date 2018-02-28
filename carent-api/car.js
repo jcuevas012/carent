@@ -4,13 +4,11 @@ const setupDataBase = require('carent-db')
 
 const { dbTest } = require('../config')
 
-const db = setupDataBase(dbTest)
-
-
 async function getCars(req, res) {
     try {
-    const cars = await db.services.Car.findAll()
-    send(res, 200, cars)
+      const db = await setupDataBase(dbTest)
+      const cars = await db.services.Car.findAll()
+      send(res, 200, cars)
     } catch (e) {
         if (e.message.match(/not found/)){
             send(res, 404, {err: e.message})
@@ -21,10 +19,11 @@ async function getCars(req, res) {
 
 async function crateCar(req, res) {
     try {
-    const cars = await db.services.Car.create({ model: 'Canrry' })
-    send(res, 200, cars)
+      const db = await setupDataBase(dbTest)
+      const cars = await db.services.Car.create({ model: 'Canrry' })
+      send(res, 200, cars)
     } catch (e) {
-     send(res, 500, {err: e.message} )
+      send(res, 500, {err: e.message} )
     }
 }
 
