@@ -10,5 +10,10 @@ app.get('/', async (req, res) => {
     res.send(result);
 })
 
+app.post('/', async (req, res) => {
+    let result = await client.createCar(req.body)
+    res.send(result);
+})
+
 
 module.exports = app

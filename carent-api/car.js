@@ -20,8 +20,16 @@ async function getCars(req, res) {
 async function crateCar(req, res) {
     try {
       const db = await setupDataBase(dbTest)
-      const cars = await db.services.Car.create({ model: 'Canrry' })
-      send(res, 200, cars)
+      
+    let newCar = {
+        brand: 'Toyota',
+        model: 'Corolla',
+        vin: 'ND24HD832J',
+        year: 2013,
+        doors: 4
+    }
+      const car = await db.services.Car.create(newCar)
+      send(res, 200, car)
     } catch (e) {
       send(res, 500, {err: e.message} )
     }
@@ -29,5 +37,5 @@ async function crateCar(req, res) {
 
 module.exports = router(
     get('/list', getCars),
-    post('/', crateCar)
+    post('/save', crateCar)
   )
